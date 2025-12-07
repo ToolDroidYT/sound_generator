@@ -1,6 +1,6 @@
 package io.github.mertguner.sound_generator;
 
-import javax.sound.sampled.AudioFormat;
+import android.media.AudioFormat;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.AudioTrack;
