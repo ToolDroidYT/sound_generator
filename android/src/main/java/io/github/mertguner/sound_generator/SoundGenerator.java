@@ -1,10 +1,9 @@
 package io.github.mertguner.sound_generator;
 
+import javax.sound.sampled.AudioFormat;
 import android.media.AudioAttributes;
-import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioTrack;
-
 import io.github.mertguner.sound_generator.generators.sawtoothGenerator;
 import io.github.mertguner.sound_generator.generators.signalDataGenerator;
 import io.github.mertguner.sound_generator.generators.sinusoidalGenerator;
@@ -210,7 +209,10 @@ public class SoundGenerator {
     public void release() {
         if (isPlaying())
             stopPlayback();
-        audioTrack.release();
+        if (audioTrack != null) {
+            audioTrack.release();
+            audioTrack = null;
+        }
     }
 
 }
