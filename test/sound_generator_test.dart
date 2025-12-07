@@ -6,13 +6,13 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 class MockSoundGeneratorPlatform
     with MockPlatformInterfaceMixin
     implements SoundGeneratorPlatform {
-
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
 }
 
 void main() {
-  final SoundGeneratorPlatform initialPlatform = SoundGeneratorPlatform.instance;
+  final SoundGeneratorPlatform initialPlatform =
+      SoundGeneratorPlatform.instance;
 
   test('$MethodChannelSoundGenerator is the default instance', () {
     expect(initialPlatform, isInstanceOf<MethodChannelSoundGenerator>());
